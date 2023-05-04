@@ -2,7 +2,7 @@
 # Balance Calculator
 
 ## Description
-Our project is a balance calculator that allows users to track their income and expenses. Users can view their income and expense details, total value, and current balance. They can also add or delete an income or expense record. Each detail includes information such as date, category, description, and more, providing users with a comprehensive overview of their finances.
+This project is a balance calculator that allows users to track their income and expenses. Users can view their income and expense details, total value, and current balance. They can also add or delete an income or expense record. Each detail includes information such as date, category, description, and more, providing users with a comprehensive overview of their finances.
 
 In addition to the financial tracking features, our project includes a dashboard that displays daily news, weather forecast, currency exchange modules for user convenience. Furthermore, we have incorporated a visualization module to help users have a better understanding of their incomes and expenses condition by providing the monthly overview.
 
