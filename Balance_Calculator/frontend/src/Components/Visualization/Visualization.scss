@@ -1,0 +1,75 @@
+.visualization-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    padding: 2rem;
+  
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  
+    svg {
+      width: 450px; /* Adjust this value according to your desired width */
+      height: 450px;
+      background-color: #f0f2f5;
+      border-radius: 10px;
+      box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .visualization-charts {
+    padding-top: 2rem ;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap; /* Changed from wrap to nowrap */
+  }
+  .date-picker-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .date-picker-label input[type="date"] {
+    margin-left: 1rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #444;
+    outline: none;
+  }
+  
+  .date-picker-label input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 1;
+  }
+  
+  .date-picker-label input[type="date"]:focus {
+    border-color: #999;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .date-picker-label .reset-date-btn {
+    margin-left: 1rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    // font-weight: bold;
+    color: #ffffff;
+    background-color: #282828;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+  
+  .date-picker-label .reset-date-btn:hover {
+    background-color: #8a8989;
+  }
+  
