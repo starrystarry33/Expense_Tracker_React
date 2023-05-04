@@ -1,0 +1,99 @@
+Resources for Balance Calculator
+
+Business Object Required for Balance Calculator:
+
+1. manage incomes
+
+POST /add-income - Add a new income statement
+
+Request body:
+{
+    "title": "February wages",
+    "amount": "100",
+    "type": "income",
+    "date": "2023/03/01 9:00",
+    category: "salary",
+    "description": "Include bonus"
+}
+
+
+DELETE /delete-income/{income_id} - Delete an income statement
+
+Request Body:
+{
+    "income_id": "1234"
+}
+
+GET /get-incomes - Find incomes
+Request parameters:
+{
+    "query": "keyword"
+}
+Response:
+[
+    {
+        "title": "February wages",
+        "amount": "100",
+        "type": "income",
+        "date": "2023/03/01 9:00",
+        category: "salary",
+        "description": "Include bonus"
+    }
+    ,
+    {
+        "title": "friends gift",
+        "amount": "10",
+        "type": "income",
+        "date": "2023/02/05 00:00",
+        category: "gift",
+        "description": "from Andy"
+    }
+]
+
+
+2. manage expenses
+
+POST /add-expense - Add a new expense statement
+
+Request body:
+{
+    "title": "down jacket",
+    "amount": "100",
+    "type": "expense",
+    "date": "2023/03/01 9:00",
+    category: "clothes",
+    "description": "Nike"
+}
+
+DELETE /delete-expense/{expense_id} - Delete an expense statement
+
+Request Body:
+{
+    "expense_id": "1234"
+}
+
+GET /get-expenses - Find expenses
+Request parameters:
+{
+    "query": "keyword"
+}
+Response:
+[
+    {
+        "title": "down jacket",
+        "amount": "100",
+        "type": "expense",
+        "date": "2023/03/01 9:00",
+        category: "clothes",
+        "description": "Nike"
+    }
+    ,
+    {
+        "title": "jeans",
+        "amount": "70",
+        "type": "expense",
+        "date": "2023/03/18 15:00",
+        category: "clothes",
+        "description": "ZARA"
+    }
+]

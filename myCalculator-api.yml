@@ -1,0 +1,230 @@
+openapi: 3.0.0
+info:
+  title: myCalculator API
+  version: 1.0.0
+  description: |-
+    Our project is a balance calculator. Users can view income and expense details, total value and balance, and add or delete an income or expense. Each detail contains information such as time, category, description, etc., which can help users better manage income and expenditure records.
+    
+    Team Members:
+      - [Zhiqing Su su.zhiq@northeastern.edu](mailto:su.zhiq@northeastern.edu)
+      - [Xinyue Zhang zhang.xinyue12@northeastern.edu](mailto:zhang.xinyue12@northeastern.edu)
+      - [Dongsheng Cheng zhang.xinyue12@northeastern.edu](mailto:zhang.xinyue12@northeastern.edu)
+      - [Zongyao Li li.zongyao@northeastern.edu](mailto:li.zongyao@northeastern.edu)	       
+servers:
+  - url: https://github.com/neu-mis-info-6150-spring-2023/final-project-group-cyberworkers
+tags:
+  - name: incomes
+    description: Income statements
+    externalDocs:
+      description: Find out more
+      url: https://github.com/neu-mis-info-6150-spring-2023/final-project-group-cyberworkers
+  - name: expenses
+    description: Expense statements
+    externalDocs:
+      description: Find out more
+      url: https://github.com/neu-mis-info-6150-spring-2023/final-project-group-cyberworkers
+
+paths:
+  /incomes:
+    post:
+      summary: Add new income statement
+      requestBody:
+        description: Income object that needs to be added to the system
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Income"
+      responses:
+        "201":
+          description: Income added successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Income"
+        "400":
+          description: Invalid input
+
+   /incomes/{incomeId}:
+    put:
+      summary: Update an income statement
+      tags: [Incomes]
+      parameters:
+        - in: path
+          name: incomeId
+          schema:
+            type: integer
+          required: true
+          description: Numeric ID of the income to update
+      requestBody:
+        description: Updated income object
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Income"
+      responses:
+        '200':
+          description: Income updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Income'
+        '400':
+          description: Invalid input
+        '404':
+          description: Income not found
+
+
+  /incomes/{incomeId}:
+    delete:
+      summary: Delete an income statement
+      tags: [Incomes]
+      parameters:
+        - in: path
+          name: incomeId
+          schema: 
+            type: integer
+          required: true
+          description: Numeric ID of the income to delete
+      responses:
+        '204':
+          description: Income deleted successfully
+        '404':
+          description: Income not found
+          
+
+  /expenses:
+    post:
+      summary: Add new expense statement
+      requestBody:
+        description: Expense object that needs to be added to the system
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Expense"
+      responses:
+        "201":
+          description: Expense added successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Expense"
+        "400":
+          description: Invalid input
+          
+  /expenses/{expenseId}:
+  put:
+    summary: Update an expense statement
+    tags: [Expenses]
+    parameters:
+      - in: path
+        name: expenseId
+        schema:
+          type: integer
+        required: true
+        description: Numeric ID of the expense to update
+    requestBody:
+      description: Updated expense object
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Expense"
+    responses:
+      '200':
+        description: Expense updated successfully
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+      '400':
+        description: Invalid input
+      '404':
+        description: Expense not found
+
+  /expenses/{expenseId}:
+    delete:
+      summary: Delete an expense statement
+      tags: [Expenses]
+      parameters:
+        - in: path
+          name: expenseId
+          schema: 
+            type: integer
+          required: true
+          description: Numeric ID of the expense to delete
+      responses:
+        '204':
+          description: Expense deleted successfully
+        '404':
+          description: Expense not found
+
+components:
+
+    
+  schemas:
+    Income:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Income title
+          example: "Feb wages"
+        amount:
+          type: integer
+          description: Income amount
+          example: 2000
+        type:
+          type: string
+          description: Type of this statement(income/expense)
+          example: "income"
+        date:
+          type: string
+          description: Date of this income statement
+          example: "2023/02/28 9:00"
+        category:
+          type: string
+          description: Category of this income
+          example: "salary"
+        description:
+          type: string
+          description: Description of this statement
+          example: "Include bonus"
+        location:
+          type: string
+          description: location of this statement
+          example: "Include bonus"
+
+    Expense:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Expense title
+          example: "down jacket"
+        amount:
+          type: integer
+          description: Expense amount
+          example: 100
+        type:
+          type: string
+          description: Type of this statement(income/expense)
+          example: "expense"
+        date:
+          type: string
+          description: Date of this expense statement
+          example: "2023/02/28 9:00"
+        category:
+          type: string
+          description: Category of this expense
+          example: "clothes"
+        description:
+          type: string
+          description: Description of this statement
+          example: "Nike"
+        location:
+          type: string
+          description: location of this statement
+          example: "Include bonus"
