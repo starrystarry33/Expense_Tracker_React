@@ -1,11 +1,5 @@
 
 # Balance Calculator
-## Team Members
-* Zhiqing Su         su.zhiq@northeastern.edu
-* Xinyue Zhang	     zhang.xinyue12@northeastern.edu
-* Dongsheng Cheng	   cheng.do@northeastern.edu	
-* Zongyao Li	       li.zongyao@northeastern.edu
-
 
 ## Description
 Our project is a balance calculator that allows users to track their income and expenses. Users can view their income and expense details, total value, and current balance. They can also add or delete an income or expense record. Each detail includes information such as date, category, description, and more, providing users with a comprehensive overview of their finances.
@@ -25,28 +19,6 @@ In addition to the financial tracking features, our project includes a dashboard
 10. As a user, I want to be able to view the today's news.
 11. As a user, I want to be able to view the locations of my transaction.
 12. As a user, I want to be able to use currency exchange tool to do currency calculation based on the real-time exchange rate.
-
-## Story Assignment 	
-
-### Zhiqing Su
-* Location dashboard using Google Map API, view location of selected transaction
-* Edit income/expense
-* Location dashbord UI design
-
-### Xinyue Zhang
-* Open Weather Map API implementation, provide real-time weather and future weather forecast given selected city
-* Data Visualization feature of incomes and expenses using D3.js
-* Currency Exchange API implementation, function as currency calculator based on the real-time exchange rate
-* Weather, Visualization and Currency Exchange dashbords UI design
-
-### Dongsheng Cheng	
-* Calulator feature 
-* Interface
-
-### Zongyao Li
-* News API
-* News dashbord UI design
-
 
 
 ## Milestones
